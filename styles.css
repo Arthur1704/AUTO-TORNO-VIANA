@@ -30,8 +30,6 @@
 }
 
 #navbarNav .navbar-nav {
-  display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
@@ -63,27 +61,56 @@
 }
 
 @media (max-width: 992px) {
-  #navbar .container-fluid {
-    flex-wrap: nowrap !important; /* continua tudo na mesma linha */
-  }
-
+  /* Container do menu recolhível */
   #navbarNav {
+    position: absolute; /* importante: fica logo abaixo do botão */
+    top: 100%; /* aparece logo após a barra principal */
+    left: 0;
     width: 100%;
     background-color: #0b2042;
-    text-align: center;
-    padding-bottom: 1em;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    z-index: 999; /* garante que fique acima do conteúdo */
   }
 
+  /* Quando o menu é aberto */
+  #navbarNav.show {
+    max-height: 300px; /* ajuste conforme número de links */
+    opacity: 1;
+  }
+
+  /* Organização interna dos links */
   #navbarNav .navbar-nav {
     flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
   }
 
   #navbarNav .nav-item {
+    width: 100%;
+    text-align: center;
     margin: 10px 0;
   }
 
   #navbarNav .nav-link {
     display: block;
+    width: 100%;
+    text-align: center;
+    color: whitesmoke !important;
+    font-weight: bold;
+    padding: 0.5em;
+  }
+
+  #navbarNav .nav-link:hover {
+    background-color: whitesmoke;
+    color: #0b2042 !important;
+  }
+
+  /* Mantém a barra principal fixa e o botão no topo */
+  #navbar .container-fluid {
+    position: relative;
   }
 }
 
@@ -345,6 +372,7 @@
 
   #contato h2 {
     font-size: 2em;
+    -webkit-text-stroke: 5px #0b2042;
   }
 
   #contato p {
