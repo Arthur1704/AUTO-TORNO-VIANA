@@ -1,0 +1,353 @@
+#navbar {
+  background-color: #0b2042;
+  padding: 0.5em 1em;
+}
+
+#navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap !important;
+}
+
+#navbar img {
+  height: 55px;
+  width: auto;
+}
+
+.navbar-brand {
+  color: whitesmoke !important;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+#navbarNav {
+  justify-content: flex-end;
+}
+
+#navbarNav .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#navbarNav .nav-item {
+  margin-left: 20px;
+}
+
+#navbarNav .nav-link {
+  color: whitesmoke !important;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#navbarNav .nav-link:hover {
+  background-color: whitesmoke;
+  color: #0b2042 !important;
+}
+
+/* Botão hamburguer */
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  margin-left: auto; /* empurra o botão pro final */
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+@media (max-width: 992px) {
+  #navbar .container-fluid {
+    flex-wrap: nowrap !important; /* continua tudo na mesma linha */
+  }
+
+  #navbarNav {
+    width: 100%;
+    background-color: #0b2042;
+    text-align: center;
+    padding-bottom: 1em;
+  }
+
+  #navbarNav .navbar-nav {
+    flex-direction: column;
+  }
+
+  #navbarNav .nav-item {
+    margin: 10px 0;
+  }
+
+  #navbarNav .nav-link {
+    display: block;
+  }
+}
+
+#inicio {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+#inicio img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+
+.texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000;
+  width: 90%;
+  max-width: 800px;
+}
+
+.texto_principal {
+  font-size: 4em;
+  -webkit-text-stroke: 2px #0b2042;
+  white-space: normal;
+  line-height: 1.1em;
+}
+
+.texto_secundario {
+  font-size: 1.5em;
+  -webkit-text-stroke: 1px #0b2042;
+  margin-top: 0.5em;
+}
+
+/* ===== SERVIÇOS ===== */
+#servicos h2 {
+  text-align: center;
+  margin: 1em 0;
+  background-color: #0b2042;
+  color: whitesmoke;
+  padding: 0.5em;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background-color: #0b2042;
+  color: whitesmoke;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card-servico:hover {
+  transform: translateY(-8px);
+}
+
+.img-bg {
+  position: relative;
+  height: 200px;
+  background-color: #0b2042;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.img-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(11, 32, 66, 0.7);
+  z-index: 1;
+}
+
+.titulo-card {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-weight: 900;
+  font-size: 1.6em;
+  text-shadow: 0 0 8px rgba(0,0,0,0.8);
+  -webkit-text-stroke: 1px #0b2042;
+}
+
+.freios-bg {
+  background-image: url("imagens/freio.jpeg");
+}
+
+.tornearia-bg {
+  background-image: url("imagens/tornearia.jpeg");
+}
+
+.manutencao-bg {
+  background-image: url("imagens/manutencao.jpeg");
+}
+
+/* ===== RESPONSIVIDADE GERAL ===== */
+@media (max-width: 992px) {
+  .texto_principal {
+    font-size: 3em;
+  }
+
+  .texto_secundario {
+    font-size: 1.2em;
+  }
+
+  #inicio img {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .texto_principal {
+    font-size: 2.2em;
+    -webkit-text-stroke: 1px #0b2042;
+  }
+
+  .texto_secundario {
+    font-size: 1em;
+  }
+
+  #inicio img {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .texto_principal {
+    font-size: 1.8em;
+    line-height: 1.2em;
+  }
+
+  .texto_secundario {
+    font-size: 0.9em;
+  }
+
+  #inicio img {
+    height: 50vh;
+  }
+}
+
+#quem_somos{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  gap: 2em;
+  padding: 3em 8%;
+  background-color: #fff;
+  flex-wrap: wrap; 
+}
+
+#imagem {
+  flex: 1;
+  max-width: 500px;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#texto {
+  flex: 1;
+  min-width: 300px;
+  color: #333;
+  text-align: justify;
+}
+
+#texto h2 {
+  color: #0b2042;
+  font-weight: 900;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+#texto p {
+  font-size: 1.5em;
+  line-height: 1.6em;
+  font-weight: bold;
+}
+
+
+@media (max-width: 992px) {
+  #quem_somos {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #quem_somos .texto {
+    text-align: center;
+  }
+
+  #quem_somos .imagem {
+    max-width: 350px;
+  }
+}
+
+#contato {
+  position: relative;
+  background-color: #192944; /* azul base */
+  color: #fff;
+  padding: 5em 8em;
+  overflow: hidden;
+}
+
+/* ===== IMAGEM GRANDE AO LADO DIREITO ===== */
+#contato::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(to left, rgba(25, 41, 68, 0.85), rgba(25, 41, 68, 0.85)),
+    url("imagens/LogoAutoTorno.png") no-repeat right center;
+  background-size: 35%;
+  opacity: 0.50;
+  z-index: 0;
+}
+
+/* ===== CONTEÚDO ===== */
+#contato h2,
+#contato p {
+  position: relative;
+  z-index: 1;
+}
+
+#contato h2 {
+  font-size: 2.6em;
+  font-weight: 800;
+  margin-bottom: 1.5em;
+}
+
+#contato p {
+  font-size: 1.2em;
+  margin: 0.4em 0;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 992px) {
+  #contato {
+    padding: 3em 2em;
+    text-align: center;
+  }
+
+  #contato::before {
+    background-size: 80%;
+    background-position: center;
+    opacity: 0.1;
+  }
+
+  #contato h2 {
+    font-size: 2em;
+  }
+
+  #contato p {
+    font-size: 1em;
+  }
+}
